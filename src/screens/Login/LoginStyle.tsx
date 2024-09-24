@@ -5,79 +5,81 @@ export const style = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#373435",
+    backgroundColor: "#373435", // Fundo da tela
+    paddingHorizontal: 20, // Adiciona padding nas laterais
   },
   boxTop: {
-    height: Dimensions.get("window").height / 20, // Reduziu a altura para 1/5 da tela
+    height: Dimensions.get("window").height / 5, // 1/5 da altura da tela para o logo
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
   },
   boxMid: {
-    height: Dimensions.get("window").height / 4,
     width: "100%",
-    paddingHorizontal: 37,
-    alignItems: "center", 
-  },
-  boxBottom: {
-    height: Dimensions.get("window").height / 3,
-    width: "100%",
-    backgroundColor: "green",
-    alignItems: "center", 
+    paddingHorizontal: 20,
+    alignItems: "center",
   },
   text: {
     fontWeight: "bold",
-    marginTop: -250,
-    fontSize: 50,
+    fontSize: 48, // Tamanho grande da fonte do título
     color: "white",
   },
   titleInput: {
-    marginLeft: 10, 
+    alignSelf: "flex-start",
+    color: "white",
+    fontSize: 16,
+    marginBottom: 5,
+    marginLeft: 15,
+  },
+  BoxInput: {
+    width: "100%",
+    marginBottom: 20,
+  },
+  input: {
+    width: "100%",
+    height: 50,
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 25,
+    paddingHorizontal: 20,
+    backgroundColor: "white",
+    fontSize: 16,
+  },
+  buttonEntrar: {
+    width: "100%",
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: "#F7A800", // Cor laranja/amarela do botão "Entrar"
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  buttonEntrarText: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  buttonCadastrar: {
+    width: "100%",
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: "transparent", // Fundo transparente para o botão "Cadastrar"
+    borderWidth: 1,
+    borderColor: "white",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttonCadastrarText: {
+    color: "white",
+    fontSize: 18,
+  },
+  esqueceu: {
+    fontSize: 14,
     color: "white",
     marginTop: 20,
   },
-  BoxInput: {
-    width: "60%",
-    height: 40,
-    borderWidth: 1,
-    borderRadius: 10,
-    marginTop: 10,
-    flexDirection: "row",
-    alignItems: "center",
-    paddingHorizontal: 0,
-    backgroundColor: "white",
-  },
-  input: {
-    height: "100%",
-    width: "100%",
-    borderRadius: 10,
-  },
-  buttonEntrar: {
-    width: "60%",
-    height: "100%",
-    borderRadius: 10,
-    marginTop: 30,
-    backgroundColor: "orange",
-    color: "white",
-    fontSize: 30,
-  },
-  buttonCadastrar: {
-    width: "60%",
-    height: "100%",
-    borderRadius: 10,
-    marginTop: 10,
-    backgroundColor: "#373435",
-    color: "white",
-    borderColor: "white",
-    fontSize: 30,
-  },
-  esqueceu: {
-    fontSize: 20,
-    color: "white",
-    marginTop: 200,
-  },
   senha: {
-    color: "orange",
-    textDecorationLine : 'none',
+    color: "#F7A800", // Cor laranja/amarela para o link "senha"
+    fontWeight: "bold",
   },
 });
