@@ -1,7 +1,10 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { style } from './LoginStyle';
 import { useNavigation } from '@react-navigation/native';
+import { TituloComponent } from '../../components/LoginComponents/TituloComponent';
+import { InputComponent } from '../../components/LoginComponents/InputComponent';
+import { ButtonComponent } from '../../components/LoginComponents/ButtonComponent';
 
 export default function Login() {
   const navigation = useNavigation();
@@ -9,30 +12,30 @@ export default function Login() {
   return (
     <View style={style.container}>
       <View style={style.boxTop}>
-        <Text style={style.text}>Y🔥ourself</Text>
+        <TituloComponent />
       </View>
 
       <View style={style.boxMid}>
         <Text style={style.titleInput}>Email</Text>
-        <View style={style.BoxInput}>
-          <TextInput style={style.input} placeholder="seu@email.com" />
-        </View>
+        {/* Usando o InputComponent para o campo de email */}
+        <InputComponent placeholder="seu@email.com" />
 
         <Text style={style.titleInput}>Senha</Text>
-        <View style={style.BoxInput}>
-          <TextInput style={style.input} placeholder="senha" secureTextEntry={true} />
-        </View>
+        {/* Usando o InputComponent para o campo de senha */}
+        <InputComponent placeholder="senha" secureTextEntry={true} />
 
-        <TouchableOpacity
-          style={style.buttonEntrar}
-          onPress={() => navigation.navigate('BottomTabRoutes')}
-        >
-          <Text style={style.buttonEntrarText}>Entrar</Text>
-        </TouchableOpacity>
+        {/* Usando o ButtonComponent para o botão de "Entrar" */}
+        <ButtonComponent 
+          title="Entrar" 
+          onPress={() => navigation.navigate('BottomTabRoutes')} 
+        />
 
-        <TouchableOpacity style={style.buttonCadastrar}>
-          <Text style={style.buttonCadastrarText}>Cadastrar</Text>
-        </TouchableOpacity>
+        {/* Usando o ButtonComponent para o botão de "Cadastrar" com o estilo secundário */}
+        <ButtonComponent
+          title="Cadastrar"
+          onPress={() => {}}
+          isPrimary={false}  // Definindo como secundário
+        />
 
         <Text style={style.esqueceu}>
           Esqueceu a{' '}

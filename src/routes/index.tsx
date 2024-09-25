@@ -3,9 +3,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { BottomTabRoutes } from './bottom-tabs.routes';
 import { CreateTask } from '../components/CreateTask';
 import { Pomodoro } from '../components/Pomodoro';
-import { Home } from '../screens/Home/HomeScreen';
 import Login from '../screens/Login/Login';
-import RecuperarSenha from '../screens/RecuperarSenha/RecuperarSenha'; // Adiciona aqui a importação
+import RecuperarSenha from '../screens/RecuperarSenha/RecuperarSenha';
 
 const Stack = createStackNavigator();
 
@@ -17,8 +16,9 @@ export function Routes() {
         <Stack.Screen name="BottomTabRoutes" component={BottomTabRoutes} />
         <Stack.Screen name="CreateTask" component={CreateTask} />
         <Stack.Screen name="Pomodoro" component={Pomodoro} />
-        <Stack.Screen name="RecuperarSenha" component={RecuperarSenha} /> {/* Adiciona a rota aqui */}
+        <Stack.Screen name="RecuperarSenha" component={RecuperarSenha} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+

@@ -76,10 +76,17 @@ export const style = StyleSheet.create({
   esqueceu: {
     fontSize: 14,
     color: "white",
-    marginTop: 20,
+    marginTop: 150,
   },
   senha: {
     color: "#F7A800", // Cor laranja/amarela para o link "senha"
     fontWeight: "bold",
+    textDecorationLine: "underline"
+  },
+  voltarLogin: {
+    fontSize: 18,
+    color: "orange",
+    marginTop: 20,
+    textDecorationLine: 'underline',
   },
 });

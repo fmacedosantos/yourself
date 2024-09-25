@@ -19,8 +19,6 @@ export function BottomTabRoutes(){
             headerShown: false, 
             tabBarShowLabel: false
             }}>
-            <Tab.Screen name="login" component={Login}
-            />
             <Tab.Screen name="home" component={Home}
                 options={{
                     tabBarIcon: () => (

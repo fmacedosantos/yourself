@@ -21,7 +21,7 @@ export const style = StyleSheet.create({
   },
   text: {
     fontWeight: "bold",
-    fontSize: 50,
+    fontSize: 48,
     color: "white",
   },
   titleInput: {
