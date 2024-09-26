@@ -9,6 +9,7 @@ import profileIcon from '../../assets/icons/profile-icon.svg';
 import { Shop } from "../screens/Shop/ShopScreen";
 import { Profile } from "../screens/Profile/ProfileScreen";
 import { Image } from "react-native";
+
 import Login from "../screens/Login/Login";
 
 const Tab = createBottomTabNavigator()
