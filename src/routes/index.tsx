@@ -5,6 +5,7 @@ import { CreateTask } from '../components/CreateTask';
 import { Pomodoro } from '../components/Pomodoro';
 import Login from '../screens/Login/Login';
 import RecuperarSenha from '../screens/RecuperarSenha/RecuperarSenha';
+import { Task } from '../components/TaskAtive/Task';
 
 const Stack = createStackNavigator();
 
@@ -15,6 +16,7 @@ export function Routes() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="BottomTabRoutes" component={BottomTabRoutes} />
         <Stack.Screen name="CreateTask" component={CreateTask} />
+        <Stack.Screen name="TaskAtive" component={Task} />
         <Stack.Screen name="Pomodoro" component={Pomodoro} />
         <Stack.Screen name="RecuperarSenha" component={RecuperarSenha} />
       </Stack.Navigator>

@@ -1,9 +1,10 @@
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 import { styles } from './NewActivity.styles';
 
 import { SummaryStats } from '../../components/SummaryStats';
 import { RectangularBrowser } from '../../components/RectangularBrowser';
+
 
 export function Tasks({navigation}: any) {
 
@@ -12,7 +13,13 @@ export function Tasks({navigation}: any) {
         <SummaryStats/>
         
         <RectangularBrowser text='INICIAR TAREFA' onPress={() => {
-          navigation.navigate('CreateTask')
+         navigation.navigate('CreateTask')
+        }}/>
+         <Text style={styles.paragraph} 
+         />
+
+        <RectangularBrowser text='TAREFAS ATIVAS' onPress={() => {
+         navigation.navigate('TaskAtive')
         }}/>
 
     </View>

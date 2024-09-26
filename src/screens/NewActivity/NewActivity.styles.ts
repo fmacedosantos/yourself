@@ -22,5 +22,10 @@ export const styles = StyleSheet.create({
     fontSize: 25,
     marginTop: 10,
     color: COLORS.BLACK,
+  },
+  paragraph: {
+    fontSize: 16,
+    marginVertical: 10,
+    textAlign: 'center',
   }
 });
