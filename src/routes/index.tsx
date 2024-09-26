@@ -4,6 +4,7 @@ import { BottomTabRoutes } from './bottom-tabs.routes';
 import { CreateTask } from '../components/CreateTask';
 import { Pomodoro } from '../components/Pomodoro';
 import Login from '../screens/Login/Login';
+import RegisterForm from "../screens/Cadastro/RegisterForm";
 import RecuperarSenha from '../screens/RecuperarSenha/RecuperarSenha';
 
 const Stack = createStackNavigator();
@@ -13,6 +14,7 @@ export function Routes() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="RegisterForm" component={RegisterForm} />
         <Stack.Screen name="BottomTabRoutes" component={BottomTabRoutes} />
         <Stack.Screen name="CreateTask" component={CreateTask} />
         <Stack.Screen name="Pomodoro" component={Pomodoro} />
