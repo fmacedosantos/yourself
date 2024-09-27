@@ -1,112 +1,82 @@
-import React, { useState, FC } from 'react';
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import styles from '../Cadastro/RegisterFormStyle';
+import { InputComponent } from '../../components/CadastroComponents/InputComponent';
+import { ButtonComponent } from './../../components/CadastroComponents/ButtonComponent';
+import { TituloComponent } from '../../components/CadastroComponents/TituloComponent';
 
-interface FormData {
-  name: string;
-  username: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
+const RegisterScreen = () => {
+  const navigation = useNavigation();
 
-const RegisterForm: FC = () => {
-  const [formData, setFormData] = useState<FormData>({
+  const [form, setForm] = useState({
+    email: '',
     name: '',
     username: '',
-    email: '',
     password: '',
     confirmPassword: '',
   });
 
-  const [error, setError] = useState<string | null>(null);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+  const handleChange = (field: string, value: string) => {
+    setForm({ ...form, [field]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Simple validation
-    if (formData.password !== formData.confirmPassword) {
-      setError('As senhas não correspondem');
-      return;
-    }
-
-    if (!formData.email || !formData.name || !formData.username) {
-      setError('Por favor, preencha todos os campos');
-      return;
-    }
-
-    // Simulating form submission
+  const handleSubmit = () => {
+    // Temporarily removing validation logic
     alert('Cadastro realizado com sucesso!');
-    setError(null); // Clear errors after success
+    navigation.navigate('Login');
   };
 
   return (
-    <div className="form-container">
-      <form className="register-form" onSubmit={handleSubmit}>
-        <h1>Y🔥urSelf</h1>
-        {error && <p className="error-message">{error}</p>}
-        
-        <label htmlFor="name">Nome Completo:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
+    <View style={styles.container}>
+      <View style={styles.boxTop}>
+        <TituloComponent />
+      </View>
+      <InputComponent
+        placeholder="seu@email.com"
+        secureTextEntry={false}
+        value={form.email}
+        onChangeText={(value) => handleChange('email', value)}
+      />
+      <InputComponent
+        placeholder="Nome completo"
+        secureTextEntry={false}
+        value={form.name}
+        onChangeText={(value) => handleChange('name', value)}
+      />
+      <InputComponent
+        placeholder="Nome de usuário"
+        secureTextEntry={false}
+        value={form.username}
+        onChangeText={(value) => handleChange('username', value)}
+      />
+      <InputComponent
+        placeholder="Senha"
+        secureTextEntry={true}
+        value={form.password}
+        onChangeText={(value) => handleChange('password', value)}
+      />
+      <InputComponent
+        placeholder="Confirme a senha"
+        secureTextEntry={true}
+        value={form.confirmPassword}
+        onChangeText={(value) => handleChange('confirmPassword', value)}
+      />
 
-        <label htmlFor="username">Nome de Usuário:</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          value={formData.username}
-          onChange={handleChange}
-          required
-        />
+      <ButtonComponent
+        title="Cadastrar"
+        onPress={handleSubmit}
+        isPrimary={true}
+      />
 
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-
-        <label htmlFor="password">Senha:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-        />
-
-        <label htmlFor="confirmPassword">Confirmar Senha:</label>
-        <input
-          type="password"
-          id="confirmPassword"
-          name="confirmPassword"
-          value={formData.confirmPassword}
-          onChange={handleChange}
-          required
-        />
-
-        <button type="submit">Cadastrar</button>
-        {/* If you need a link, specify a valid URL or remove this */}
-        {/* <a href='/home' target="_blank">Go to Home</a> */}
-      </form>
-    </div>
+      <Text style={styles.alreadyHaveAccountText}>
+        Já possui uma conta?{' '}
+        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.loginText}>Faça login</Text>
+        </TouchableOpacity>
+      </Text>
+    </View>
   );
 };
 
-export default RegisterForm;
+export default RegisterScreen;

@@ -33,7 +33,7 @@ export default function Login() {
         {/* Usando o ButtonComponent para o botão de "Cadastrar" com o estilo secundário */}
         <ButtonComponent
           title="Cadastrar"
-          onPress={() => {}}
+          onPress={() => {navigation.navigate('RegisterForm')}}
           isPrimary={false}  // Definindo como secundário
         />
 

@@ -33,19 +33,29 @@ export function Home({ navigation }: any) {
         <AtividadeComponent minutos={25} nome="HTML" nivel="I" corNivel="#5DB075" />
 
         {/* Botão "Ver mais" ou "Ver menos" controlado por showMore */}
-        <TouchableOpacity onPress={handleShowMore} style={styles.verMais}>
-          <Text style={styles.verMais}>
-            {showMore ? 'Ver menos' : 'Ver mais...'}
-          </Text>
-        </TouchableOpacity>
-
-        {/* Atividades extras */}
-        {showMore && (
+        {showMore ? (
           <>
+            {/* Atividades extras */}
             <AtividadeComponent minutos={55} nome="Spring Boot" nivel="III" corNivel="#FF5733" />
             <AtividadeComponent minutos={30} nome="CSS" nivel="I" corNivel="#5DB075" />
             <AtividadeComponent minutos={60} nome="JavaScript" nivel="II" corNivel="#F7A800" />
+            <AtividadeComponent minutos={35} nome="TypeScript" nivel="II" corNivel="#F7A800" />
+            <AtividadeComponent minutos={25} nome="Python" nivel="I" corNivel="#5DB075" />
+            <AtividadeComponent minutos={12} nome="Ruby" nivel="I" corNivel="#5DB075" />
+            <AtividadeComponent minutos={45} nome="Django" nivel="III" corNivel="#FF5733" />
+            <AtividadeComponent minutos={38} nome="Go" nivel="II" corNivel="#F7A800" />
+            <AtividadeComponent minutos={27} nome="PHP" nivel="I" corNivel="#5DB075" />
+            <AtividadeComponent minutos={55} nome="C++" nivel="II" corNivel="#F7A800" />
+
+            {/* Exibe o botão "Ver menos" abaixo das atividades extras */}
+            <TouchableOpacity onPress={handleShowMore} style={styles.verMais}>
+              <Text style={styles.verMais}>Ver menos</Text>
+            </TouchableOpacity>
           </>
+        ) : (
+          <TouchableOpacity onPress={handleShowMore} style={styles.verMais}>
+            <Text style={styles.verMais}>Ver mais...</Text>
+          </TouchableOpacity>
         )}
       </ScrollView>
     </View>
