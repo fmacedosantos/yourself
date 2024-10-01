@@ -6,7 +6,7 @@ import historicalIcon from '../../assets/icons/historical-icon.svg';
 import addActivityIcon from '../../assets/icons/add_activity-icon.svg';
 import shopIcon from '../../assets/icons/shop-icon.svg';
 import profileIcon from '../../assets/icons/profile-icon.svg';
-import { Shop } from "../screens/Shop/ShopScreen";
+import  ShopScreen  from "../screens/Shop/ShopScreen";
 import { Profile } from "../screens/Profile/ProfileScreen";
 import { Image } from "react-native";
 
@@ -32,7 +32,7 @@ export function BottomTabRoutes(){
                     )
                 }}
             />
-            <Tab.Screen name="shop" component={Shop}
+            <Tab.Screen name="shop" component={ShopScreen}
                 options={{
                     tabBarIcon: () => (
                         <Image source={shopIcon}/>
